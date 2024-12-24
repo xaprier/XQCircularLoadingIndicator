@@ -14,8 +14,14 @@ class MainWindow : public QMainWindow {
     Q_OBJECT
 
   public:
-    explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    static MainWindow *Instance();
+
+    //* Delete copy constructor and assignment operator
+    MainWindow(const MainWindow &) = delete;
+    MainWindow &operator=(const MainWindow &) = delete;
+    //* Delete move constructor and assignment operator
+    MainWindow(MainWindow &&) = delete;
+    MainWindow &operator=(MainWindow &&) = delete;
 
   protected:
     virtual void _LoadDefaults();
@@ -47,6 +53,10 @@ class MainWindow : public QMainWindow {
     void _OnTextContentChanged(const QString &text);
 
   private:
+    static MainWindow *instance;
+    explicit MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
+
     xaprier::qt::widgets::CircularLoadingIndicator *indicator;
     Ui::MainWindow *ui;
 };

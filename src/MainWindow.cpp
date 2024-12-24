@@ -17,6 +17,13 @@
 #include "../design/ui_MainWindow.h"
 #include "CircularLoadingIndicator.hpp"
 
+MainWindow *MainWindow::instance = nullptr;
+
+MainWindow *MainWindow::Instance() {
+    if (MainWindow::instance == nullptr) MainWindow::instance = new MainWindow();
+    return MainWindow::instance;
+}
+
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
