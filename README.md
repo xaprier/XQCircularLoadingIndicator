@@ -128,4 +128,5 @@ QString GetText() const;
 # An example MainWindow for testing these features
 - All the implementation can be tested with created MainWindow class.
 - Video of MainWindow
-[![Watch the video](https://raw.githubusercontent.com/xaprier/XQCircularLoadingIndicator/assets/MainWindow.png)](https://raw.githubusercontent.com/xaprier/XQCircularLoadingIndicator/assets/MainWindow.mp4)
+
+[![Watch the video](https://raw.githubusercontent.com/xaprier/XQCircularLoadingIndicator/assets/MainWindow.png)](https://github.com/user-attachments/assets/86617c81-18e7-4c4e-897b-6acd5d52220f)
