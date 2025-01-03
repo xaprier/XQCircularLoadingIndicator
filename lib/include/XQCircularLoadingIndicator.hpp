@@ -1,5 +1,5 @@
-#ifndef CIRCULARLOADINGINDICATOR_HPP
-#define CIRCULARLOADINGINDICATOR_HPP
+#ifndef XQCIRCULARLOADINGINDICATOR_HPP
+#define XQCIRCULARLOADINGINDICATOR_HPP
 
 #include <QColor>
 #include <QDebug>
@@ -17,7 +17,7 @@
 namespace xaprier {
 namespace qt {
 namespace widgets {
-class CircularLoadingIndicator : public QWidget {
+class XQCircularLoadingIndicator : public QWidget {
     Q_OBJECT
     Q_PROPERTY(double maxSpeed MEMBER m_maxSpeed READ GetMaximumSpeed WRITE SetMaximumSpeed NOTIFY si_MaximumSpeedChanged)
     Q_PROPERTY(double minSpeed MEMBER m_minSpeed READ GetMinimumSpeed WRITE SetMinimumSpeed NOTIFY si_MinimumSpeedChanged)
@@ -50,8 +50,8 @@ class CircularLoadingIndicator : public QWidget {
      *
      * @param parent Parent widget
      */
-    CircularLoadingIndicator(QWidget *parent = nullptr);
-    ~CircularLoadingIndicator();
+    XQCircularLoadingIndicator(QWidget *parent = nullptr);
+    ~XQCircularLoadingIndicator();
 
     /**
      * @brief Starts the thread for animate loading
@@ -182,4 +182,4 @@ class CircularLoadingIndicator : public QWidget {
 }  // namespace qt
 }  // namespace xaprier
 
-#endif  // CIRCULARLOADINGINDICATOR_HPP
+#endif  // XQCIRCULARLOADINGINDICATOR_HPP

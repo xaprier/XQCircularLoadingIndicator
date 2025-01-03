@@ -1,17 +1,17 @@
-#include "CircularLoadingIndicator.hpp"
+#include "XQCircularLoadingIndicator.hpp"
 
 namespace xaprier {
 namespace qt {
 namespace widgets {
-CircularLoadingIndicator::CircularLoadingIndicator(QWidget *parent) : QWidget(parent), m_superClass(parent) {
+XQCircularLoadingIndicator::XQCircularLoadingIndicator(QWidget *parent) : QWidget(parent), m_superClass(parent) {
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     resize(m_width, m_height);
     updateGeometry();
 }
 
-CircularLoadingIndicator::~CircularLoadingIndicator() { this->Stop(); }
+XQCircularLoadingIndicator::~XQCircularLoadingIndicator() { this->Stop(); }
 
-void CircularLoadingIndicator::SetMaximumSpeed(const double &maximumSpeed) {
+void XQCircularLoadingIndicator::SetMaximumSpeed(const double &maximumSpeed) {
     if (m_running) {
         qDebug() << QObject::tr(
             "Cannot change maximum speed while running. Please stop the "
@@ -32,7 +32,7 @@ void CircularLoadingIndicator::SetMaximumSpeed(const double &maximumSpeed) {
     }
 }
 
-void CircularLoadingIndicator::SetMinimumSpeed(const double &minimumSpeed) {
+void XQCircularLoadingIndicator::SetMinimumSpeed(const double &minimumSpeed) {
     if (m_running) {
         qDebug() << QObject::tr(
             "Cannot change minimum speed while running. Please stop the "
@@ -53,7 +53,7 @@ void CircularLoadingIndicator::SetMinimumSpeed(const double &minimumSpeed) {
     }
 }
 
-void CircularLoadingIndicator::SetSegmentSize(const int &segmentSize) {
+void XQCircularLoadingIndicator::SetSegmentSize(const int &segmentSize) {
     if (m_running) {
         qDebug() << QObject::tr(
             "Cannot change segment size while running. Please stop the "
@@ -66,7 +66,7 @@ void CircularLoadingIndicator::SetSegmentSize(const int &segmentSize) {
     repaint();
 }
 
-void CircularLoadingIndicator::SetWidth(const int &width) {
+void XQCircularLoadingIndicator::SetWidth(const int &width) {
     if (m_running) {
         qDebug() << QObject::tr(
             "Cannot change width while running. Please stop the "
@@ -83,7 +83,7 @@ void CircularLoadingIndicator::SetWidth(const int &width) {
     }
 }
 
-void CircularLoadingIndicator::SetHeight(const int &height) {
+void XQCircularLoadingIndicator::SetHeight(const int &height) {
     if (m_running) {
         qDebug() << QObject::tr(
             "Cannot change height while running. Please stop the "
@@ -100,7 +100,7 @@ void CircularLoadingIndicator::SetHeight(const int &height) {
     }
 }
 
-void CircularLoadingIndicator::SetMargin(const int &x, const int &y) {
+void XQCircularLoadingIndicator::SetMargin(const int &x, const int &y) {
     if (m_running) {
         qDebug() << QObject::tr(
             "Cannot change margin while running. Please stop the "
@@ -117,7 +117,7 @@ void CircularLoadingIndicator::SetMargin(const int &x, const int &y) {
     }
 }
 
-void CircularLoadingIndicator::SetMarginX(const int &x) {
+void XQCircularLoadingIndicator::SetMarginX(const int &x) {
     if (m_running) {
         qDebug() << QObject::tr(
             "Cannot change margin while running. Please stop the "
@@ -133,7 +133,7 @@ void CircularLoadingIndicator::SetMarginX(const int &x) {
     }
 }
 
-void CircularLoadingIndicator::SetMarginY(const int &y) {
+void XQCircularLoadingIndicator::SetMarginY(const int &y) {
     if (m_running) {
         qDebug() << QObject::tr(
             "Cannot change margin while running. Please stop the "
@@ -149,7 +149,7 @@ void CircularLoadingIndicator::SetMarginY(const int &y) {
     }
 }
 
-void CircularLoadingIndicator::SetProgressWidth(const int &width) {
+void XQCircularLoadingIndicator::SetProgressWidth(const int &width) {
     if (m_running) {
         qDebug() << QObject::tr(
             "Cannot change progress width while running. Please stop the "
@@ -165,7 +165,7 @@ void CircularLoadingIndicator::SetProgressWidth(const int &width) {
     }
 }
 
-void CircularLoadingIndicator::SetSquare(const bool &enable) {
+void XQCircularLoadingIndicator::SetSquare(const bool &enable) {
     if (m_running) {
         qDebug() << QObject::tr(
             "Cannot change square while running. Please stop the "
@@ -182,7 +182,7 @@ void CircularLoadingIndicator::SetSquare(const bool &enable) {
     }
 }
 
-void CircularLoadingIndicator::SetShadow(const bool &enable) {
+void XQCircularLoadingIndicator::SetShadow(const bool &enable) {
     // todo: maybe this control will not be needed
     // if (m_running) {
     //   qDebug() << QObject::tr(
@@ -208,7 +208,7 @@ void CircularLoadingIndicator::SetShadow(const bool &enable) {
     }
 }
 
-void CircularLoadingIndicator::SetProgressRoundedCap(const bool &enable) {
+void XQCircularLoadingIndicator::SetProgressRoundedCap(const bool &enable) {
     if (m_running) {
         qDebug() << QObject::tr(
             "Cannot change progress rounded cap while running. Please stop the "
@@ -224,7 +224,7 @@ void CircularLoadingIndicator::SetProgressRoundedCap(const bool &enable) {
     }
 }
 
-void CircularLoadingIndicator::SetEnableBg(const bool &enable) {
+void XQCircularLoadingIndicator::SetEnableBg(const bool &enable) {
     if (m_running) {
         qDebug() << QObject::tr(
             "Cannot change enable background while running. Please stop the "
@@ -240,7 +240,7 @@ void CircularLoadingIndicator::SetEnableBg(const bool &enable) {
     }
 }
 
-void CircularLoadingIndicator::SetEnableText(const bool &enable) {
+void XQCircularLoadingIndicator::SetEnableText(const bool &enable) {
     if (m_running) {
         qDebug() << QObject::tr(
             "Cannot change enable text while running. Please stop the "
@@ -256,7 +256,7 @@ void CircularLoadingIndicator::SetEnableText(const bool &enable) {
     }
 }
 
-void CircularLoadingIndicator::SetProgressAlignment(const Qt::Alignment &alignment) {
+void XQCircularLoadingIndicator::SetProgressAlignment(const Qt::Alignment &alignment) {
     if (m_running) {
         qDebug() << QObject::tr(
             "Cannot change progress alignment while running. Please stop the "
@@ -272,7 +272,7 @@ void CircularLoadingIndicator::SetProgressAlignment(const Qt::Alignment &alignme
     }
 }
 
-void CircularLoadingIndicator::SetBgColor(const QColor &color) {
+void XQCircularLoadingIndicator::SetBgColor(const QColor &color) {
     if (m_running && !m_enableBg) {
         qDebug() << QObject::tr(
             "Cannot change background color while running. Please stop the "
@@ -288,7 +288,7 @@ void CircularLoadingIndicator::SetBgColor(const QColor &color) {
     }
 }
 
-void CircularLoadingIndicator::SetProgressColor(const QColor &color) {
+void XQCircularLoadingIndicator::SetProgressColor(const QColor &color) {
     if (m_running) {
         qDebug() << QObject::tr(
             "Cannot change progress color while running. Please stop the "
@@ -304,7 +304,7 @@ void CircularLoadingIndicator::SetProgressColor(const QColor &color) {
     }
 }
 
-void CircularLoadingIndicator::SetTextColor(const QColor &color) {
+void XQCircularLoadingIndicator::SetTextColor(const QColor &color) {
     if (m_running && !m_enableText) {
         qDebug() << QObject::tr(
             "Cannot change text color while running. Please stop the "
@@ -320,7 +320,7 @@ void CircularLoadingIndicator::SetTextColor(const QColor &color) {
     }
 }
 
-void CircularLoadingIndicator::SetText(const QString &text) {
+void XQCircularLoadingIndicator::SetText(const QString &text) {
     if (m_running && !m_enableText) {
         qDebug() << QObject::tr(
             "Cannot change text while running. Please stop the "
@@ -336,7 +336,7 @@ void CircularLoadingIndicator::SetText(const QString &text) {
     }
 }
 
-void CircularLoadingIndicator::Start() {
+void XQCircularLoadingIndicator::Start() {
     if (this->m_running) {
         qDebug() << QObject::tr("Indicator is already running.");
         return;
@@ -353,7 +353,7 @@ void CircularLoadingIndicator::Start() {
     });
 }
 
-void CircularLoadingIndicator::Stop() {
+void XQCircularLoadingIndicator::Stop() {
     m_running = false;
 
     // Wait for the thread to finish
@@ -362,7 +362,7 @@ void CircularLoadingIndicator::Stop() {
     }
 }
 
-void CircularLoadingIndicator::_Progress() {
+void XQCircularLoadingIndicator::_Progress() {
     double angle = fmod(m_currentValue + 270, m_circularDegree);
 
     // calculate speed factor with normalized sin values
@@ -378,7 +378,7 @@ void CircularLoadingIndicator::_Progress() {
         this, [this]() { repaint(); }, Qt::QueuedConnection);
 }
 
-void CircularLoadingIndicator::paintEvent(QPaintEvent *event) {
+void XQCircularLoadingIndicator::paintEvent(QPaintEvent *event) {
     QPainter painter(this);
     auto pnwidth = m_width - m_progressWidth;
     auto pnheight = m_height - m_progressWidth;
@@ -432,7 +432,7 @@ void CircularLoadingIndicator::paintEvent(QPaintEvent *event) {
     painter.end();
 }
 
-void CircularLoadingIndicator::resizeEvent(QResizeEvent *event) {
+void XQCircularLoadingIndicator::resizeEvent(QResizeEvent *event) {
     QSize size;
     if (event->size().width() > m_width + m_marginX * 2)  // expand
         size.setWidth(qMax(event->size().width(), m_width + m_marginX * 2));

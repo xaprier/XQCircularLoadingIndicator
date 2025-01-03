@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QMessageBox>
 
-#include "CircularLoadingIndicator.hpp"
+#include "XQCircularLoadingIndicator.hpp"
 
 namespace Ui {
 class MainWindow;
@@ -57,7 +57,7 @@ class MainWindow : public QMainWindow {
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    xaprier::qt::widgets::CircularLoadingIndicator *indicator;
+    xaprier::qt::widgets::XQCircularLoadingIndicator *indicator;
     Ui::MainWindow *ui;
 };
 
