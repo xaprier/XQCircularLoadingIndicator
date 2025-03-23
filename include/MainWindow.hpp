@@ -57,7 +57,7 @@ class MainWindow : public QMainWindow {
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-    xaprier::qt::widgets::XQCircularLoadingIndicator *indicator;
+    xaprier::Qt::Widgets::XQCircularLoadingIndicator *indicator;
     Ui::MainWindow *ui;
 };
 

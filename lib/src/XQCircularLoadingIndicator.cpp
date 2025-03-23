@@ -1,8 +1,8 @@
 #include "XQCircularLoadingIndicator.hpp"
 
 namespace xaprier {
-namespace qt {
-namespace widgets {
+namespace Qt {
+namespace Widgets {
 XQCircularLoadingIndicator::XQCircularLoadingIndicator(QWidget *parent) : QWidget(parent), m_superClass(parent) {
     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     resize(m_width, m_height);
@@ -256,7 +256,7 @@ void XQCircularLoadingIndicator::SetEnableText(const bool &enable) {
     }
 }
 
-void XQCircularLoadingIndicator::SetProgressAlignment(const Qt::Alignment &alignment) {
+void XQCircularLoadingIndicator::SetProgressAlignment(const ::Qt::Alignment &alignment) {
     if (m_running) {
         qDebug() << QObject::tr(
             "Cannot change progress alignment while running. Please stop the "
@@ -375,7 +375,7 @@ void XQCircularLoadingIndicator::_Progress() {
 
     // Schedule UI update on the main thread
     QMetaObject::invokeMethod(
-        this, [this]() { repaint(); }, Qt::QueuedConnection);
+        this, [this]() { repaint(); }, ::Qt::QueuedConnection);
 }
 
 void XQCircularLoadingIndicator::paintEvent(QPaintEvent *event) {
@@ -391,7 +391,7 @@ void XQCircularLoadingIndicator::paintEvent(QPaintEvent *event) {
 
     // create rect
     auto rect = QRect(std::abs(m_marginX - margin), std::abs(m_marginY - margin), m_width, m_height);
-    painter.setPen(Qt::NoPen);
+    painter.setPen(::Qt::NoPen);
     painter.drawRect(rect);
 
     // pen
@@ -410,8 +410,8 @@ void XQCircularLoadingIndicator::paintEvent(QPaintEvent *event) {
 
     // set round cap
     if (this->m_progressRoundedCap) {
-        pen.setCapStyle(Qt::RoundCap);
-        penny.setCapStyle(Qt::RoundCap);
+        pen.setCapStyle(::Qt::RoundCap);
+        penny.setCapStyle(::Qt::RoundCap);
     }
 
     if (this->m_enableBg) {
@@ -421,7 +421,7 @@ void XQCircularLoadingIndicator::paintEvent(QPaintEvent *event) {
 
     if (this->m_enableText) {
         painter.setPen(textPen);
-        painter.drawText(rect, Qt::AlignCenter, this->m_text);
+        painter.drawText(rect, ::Qt::AlignCenter, this->m_text);
     }
 
     // create arc/circular progress
@@ -447,23 +447,23 @@ void XQCircularLoadingIndicator::resizeEvent(QResizeEvent *event) {
     if (m_square) {
         this->m_width = qMin(size.width(), size.height());
         this->m_height = qMin(size.width(), size.height());
-        if (m_progressAlignment & Qt::AlignCenter) {
+        if (m_progressAlignment & ::Qt::AlignCenter) {
             this->m_marginX = (size.width() - this->m_width) / 2;
             this->m_marginY = (size.height() - this->m_height) / 2;
         } else {
-            if (m_progressAlignment & Qt::AlignHCenter) {
+            if (m_progressAlignment & ::Qt::AlignHCenter) {
                 this->m_marginX = (size.width() - this->m_width) / 2;
-            } else if (m_progressAlignment & Qt::AlignRight) {
+            } else if (m_progressAlignment & ::Qt::AlignRight) {
                 this->m_marginX = (size.width() - this->m_width);
-            } else if (m_progressAlignment & Qt::AlignLeft) {
+            } else if (m_progressAlignment & ::Qt::AlignLeft) {
                 this->m_marginX = 0;
             }
 
-            if (m_progressAlignment & Qt::AlignVCenter) {
+            if (m_progressAlignment & ::Qt::AlignVCenter) {
                 this->m_marginY = (size.height() - this->m_height) / 2;
-            } else if (m_progressAlignment & Qt::AlignBottom) {
+            } else if (m_progressAlignment & ::Qt::AlignBottom) {
                 this->m_marginY = (size.height() - this->m_height);
-            } else if (m_progressAlignment & Qt::AlignTop) {
+            } else if (m_progressAlignment & ::Qt::AlignTop) {
                 this->m_marginY = 0;
             }
         }
@@ -477,6 +477,6 @@ void XQCircularLoadingIndicator::resizeEvent(QResizeEvent *event) {
     update();
 }
 
-}  // namespace widgets
-}  // namespace qt
+}  // namespace Widgets
+}  // namespace Qt
 }  // namespace xaprier

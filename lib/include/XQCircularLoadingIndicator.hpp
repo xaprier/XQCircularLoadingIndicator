@@ -15,8 +15,8 @@
 #include <cmath>
 
 namespace xaprier {
-namespace qt {
-namespace widgets {
+namespace Qt {
+namespace Widgets {
 class XQCircularLoadingIndicator : public QWidget {
     Q_OBJECT
     Q_PROPERTY(double maxSpeed MEMBER m_maxSpeed READ GetMaximumSpeed WRITE SetMaximumSpeed NOTIFY si_MaximumSpeedChanged)
@@ -35,7 +35,7 @@ class XQCircularLoadingIndicator : public QWidget {
     Q_PROPERTY(bool enableBg MEMBER m_enableBg READ GetEnableBg WRITE SetEnableBg NOTIFY si_EnableBgChanged)
     Q_PROPERTY(bool enableText MEMBER m_enableText READ GetEnableText WRITE SetEnableText NOTIFY si_EnableTextChanged)
 
-    Q_PROPERTY(Qt::Alignment progressAlignment MEMBER m_progressAlignment READ GetProgressAlignment WRITE SetProgressAlignment NOTIFY
+    Q_PROPERTY(::Qt::Alignment progressAlignment MEMBER m_progressAlignment READ GetProgressAlignment WRITE SetProgressAlignment NOTIFY
                    si_ProgressAlignmentChanged)
 
     Q_PROPERTY(QColor bgColor MEMBER m_bgColor READ GetBgColor WRITE SetBgColor NOTIFY si_BgColorChanged)
@@ -81,7 +81,7 @@ class XQCircularLoadingIndicator : public QWidget {
     void SetEnableBg(const bool &enable = true);
     void SetEnableText(const bool &enable = false);
 
-    void SetProgressAlignment(const Qt::Alignment &alignment = Qt::AlignCenter);
+    void SetProgressAlignment(const ::Qt::Alignment &alignment = ::Qt::AlignCenter);
 
     void SetBgColor(const QColor &color = "#44475a");
     void SetProgressColor(const QColor &color = "#498BD1");
@@ -107,7 +107,7 @@ class XQCircularLoadingIndicator : public QWidget {
 
     bool GetRunning() const { return m_running; }
 
-    Qt::Alignment GetProgressAlignment() const { return m_progressAlignment; }
+    ::Qt::Alignment GetProgressAlignment() const { return m_progressAlignment; }
 
     QColor GetBgColor() const { return m_bgColor; }
     QColor GetProgressColor() const { return m_progressColor; }
@@ -132,7 +132,7 @@ class XQCircularLoadingIndicator : public QWidget {
     void si_EnableBgChanged(bool enable);
     void si_EnableTextChanged(bool enable);
 
-    void si_ProgressAlignmentChanged(Qt::Alignment alignment);
+    void si_ProgressAlignmentChanged(::Qt::Alignment alignment);
 
     void si_BgColorChanged(QColor color);
     void si_ProgressColorChanged(QColor color);
@@ -171,15 +171,15 @@ class XQCircularLoadingIndicator : public QWidget {
     bool m_progressRoundedCap = true;
     bool m_enableBg = true;
     bool m_enableText = false;
-    Qt::Alignment m_progressAlignment = Qt::AlignCenter;
+    ::Qt::Alignment m_progressAlignment = ::Qt::AlignCenter;
     QColor m_bgColor = "#44475a";
     QColor m_progressColor = "#498BD1";
     QColor m_textColor = "#498BD1";
     QString m_text = "Loading...";
 };
 
-}  // namespace widgets
-}  // namespace qt
+}  // namespace Widgets
+}  // namespace Qt
 }  // namespace xaprier
 
 #endif  // XQCIRCULARLOADINGINDICATOR_HPP

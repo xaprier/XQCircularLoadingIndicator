@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     auto layout = new QGridLayout(this->ui->indicatorGroupBox);
     this->ui->indicatorGroupBox->setLayout(layout);
 
-    this->indicator = new xaprier::qt::widgets::XQCircularLoadingIndicator(this->ui->indicatorGroupBox);
+    this->indicator = new xaprier::Qt::Widgets::XQCircularLoadingIndicator(this->ui->indicatorGroupBox);
     this->indicator->SetProgressAlignment(Qt::AlignCenter);
     this->indicator->SetSquare(true);
 
